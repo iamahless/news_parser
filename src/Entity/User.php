@@ -31,24 +31,24 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $roles = [];
 
 	/**
-	 * @var DateTime $created
+	 * @var string The hashed password
+	 * @ORM\Column(type="string")
+	 */
+	private $password;
+
+	/**
+	 * @var DateTime $createdAt
 	 *
 	 * @ORM\Column(name="created_at", type="datetime", nullable=false)
 	 */
 	private $createdAt;
 
 	/**
-	 * @var DateTime $updated
+	 * @var DateTime $updatedAt
 	 *
 	 * @ORM\Column(name="updated_at", type="datetime", nullable=false)
 	 */
 	private $updatedAt;
-
-    /**
-     * @var string The hashed password
-     * @ORM\Column(type="string")
-     */
-    private $password;
 
     public function getId(): ?int
     {
